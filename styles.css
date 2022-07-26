@@ -1,0 +1,75 @@
+.border{
+    border: 2px solid red;
+}
+body{
+    font-family:Garamond, serif;
+    background-repeat: no-repeat; 
+    background-color: #cccccc;
+    background-size: cover;
+}
+
+#bg{
+    background-color: rgb(117, 163, 201);
+}
+
+https://images.unsplash.com/photo-1598760122223-45f0f18a1bbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+
+
+.my-style{
+    font-family:Garamond, serif;
+
+}
+.title {
+  font-family:Garamond, serif;
+  font-size: 50px;
+  font-weight: bolder;
+  line-height: 60px;
+  margin-top: 1rem;
+  background: -webkit-linear-gradient(rgb(12, 152, 245), rgb(7, 29, 199),rgb(11, 127, 204), rgb(7, 29, 199), rgb(11, 127, 204),rgb(7, 29, 199) );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(4px 3px 2px rgb(1, 19, 151));
+}
+
+#list{
+    display:flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 800px;
+}
+/* ------------FORM--------------- */
+input{
+    font-family:Garamond, serif;
+}
+
+.btn{
+    width: 100px;
+
+}
+.addTask{
+    margin: auto;
+    margin-top: 1rem;
+}
+.form-check {
+    color:black;
+}
+.btn-container{
+    display: flex;
+    margin:auto;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.add-btn{
+    display: flex;
+    margin:auto;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* ------------TABLE-------------- */
+.table{
+    width:300px;
+}

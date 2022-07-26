@@ -1,3 +1,17 @@
+let bgBluePink=()=>{ 
+    document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
+};
+
+let bgRainbow=()=>{ 
+    document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
+};
+
+let bgSmoke=()=>{ 
+    document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1598760122223-45f0f18a1bbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
+    
+};
+
+
 let id = 0;
 
 
@@ -32,7 +46,7 @@ function createDeleteButton(id){
 
     btn.className='btn btn-primary';
     btn.id=id;
-    btn.innerHTML = 'Delete';
+    btn.innerHTML = '-';
    
     btn.onclick = ()=>{
         console.log(`Deleting row with id: item-${id}`);
@@ -41,7 +55,7 @@ function createDeleteButton(id){
     };
 
     return btn;
-     console.log('goodbye');
+     
 };
 
 console.log(endTable);

@@ -14,66 +14,108 @@
 
 
 </head>
-<body class="bg">
+<body id="bg">
+    <h1 class="text-center title">Things to do...</h1>
     <br>
-    <div class="container">   
+        <div class="container my-style">   
           
-        <div class="card-body">
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                            <label for="new-start-date">Start Date</label>
-                            <input type="date" class="form-control" id="new-start-date">
+                    <div class="col-sm ">
+                        <div class="form">
+                            <input type="text" class="form-control" id="new-start-date" placeholder="Start Date"         onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
                     </div>
             
                     <div class="col-sm">
-                        <div class="form-group">
-                            <label for="new-end-date">End Date</label>
-                            <input type="date" class="form-control" id="new-end-date">
+                        <div class="form">
+                            <input type="text" class="form-control" id="new-end-date" placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
                     </div>
                 </div>    
-        </div>    
-    <br>  
-        <div class="card-body">
+            </div>    
+        
+            <br>  
+        
+            <div class="card my-style">
                 <div class="row">
                     <div class="col-sm">
                         <div class="form-group">
-                            <label for="new-task">Task</label>
-                            <input type="text" class="form-control" id="new-task" placeholder="task">
+                            <input type="text" class=" my-style form-control" id="new-task" placeholder="Type something thing to do...">
                         </div>
                     </div>
-                </div>
+                </div>  
+            </div>
             
-                <div>
-                    <button id="add" class="btn btn-primary from-control">create</button>
-                </div> 
         </div>
-           
-    </div>
 
-    <!--------------------------------------------------------->
-    <br>
-    <div class="container">
+
+        <!--------------------BUTTONS-------------------->
+        
+        <div class="container my-style btn-container">
+            
+            <div class="row">
+                <br>
+                <div class="col-sm addBtn">
+                    <button id="addTask" class="btn btn-outline-light from-control">Add</button>
+                </div>
+
+                <div class="col-sm">
+
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgBluePink()" class="form-check-input" type="radio" name="bg-radios" id="radio1" value="option1">
+                            <label class="form-check-label" for="radio1">
+                                Pink and Blue Marble
+                            </label>
+                        </div>
+                    </div>
+ 
+
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgRainbow()" class="form-check-input" type="radio" name="bg-radios" id="radio2" value="option2">
+                            <label class="form-check-label" for="radio2">
+                                Rainbow
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm">
+                        <div class="form-check">
+                        <input onclick="bgSmoke()" class="form-check-input" type="radio" name="bg-radios" id="radio3" value="option3">
+                        <label class="form-check-label" for="radio3">
+                            Smoke
+                        </label>
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+        
+            <!------------------------TABLE--------------------------->
+        <br>
+        <br>
+        <div class="container table-size">
             <div class="table-card">
-                <table id="list" class="table table-dark table-striped">
+                <table id="list" class="my-style table table-light table-striped">
                     <tr>
-                        <th>Task</th>
-                        <th>Date Created</th>
-                        <th>Start Date</th>
-                        <th>Due Date</th>
-                        <th>Actions</th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </table>
             </div>
-    </div>
+        </div>
+    
+        <!--------------------------------------------------------->
 
     <script src="node_modules\jquery\dist\jquery.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
-
-    <!--------------------------------------------------------->
-
     <script src="script.js"></script>
 </body>
 </html>
