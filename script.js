@@ -20,8 +20,18 @@ let bgRainbow=()=>{
 
 let bgSmoke=()=>{ 
     document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1598760122223-45f0f18a1bbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
-    
 };
+
+var userInput = document.getElementById("new-task");
+
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        document.getElementById("addBtn").click();
+    }
+});
+
+
 let myTasks = [];
 
 let id = 0;
@@ -62,7 +72,6 @@ let task=()=>{
 
 function deleteButton(id){
     let btn=document.createElement('button');
-
     btn.className='btn btn-outline-dark';
     btn.id=id;
     btn.innerHTML = '➖';
@@ -79,4 +88,3 @@ function deleteButton(id){
 //   myTasks = JSON.parse(localStorage.getItem("myTasks"))
 //   showTasks(myTasks);
 // }
-
