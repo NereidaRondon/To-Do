@@ -18,95 +18,94 @@
     <h1 class="text-center title">Things to do...</h1>
     <br>
         <div class="container my-style">   
-          
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm ">
-                        <div class="form">
-                            <input type="text" class="form-control" id="new-start-date" placeholder="Start Date"         onfocus="(this.type='date')" onblur="(this.type='text')">
-                        </div>
-                    </div>
-            
-                    <div class="col-sm">
-                        <div class="form">
-                            <input type="text" class="form-control" id="new-end-date" placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')">
-                        </div>
-                    </div>
-                </div>    
-            </div>    
         
-            <br>  
-        
-            <div class="card my-style">
+            <div class="glass bg-options">      
                 <div class="row">
                     <div class="col-sm">
-                        <div class="form-group">
-                            <input type="text" class=" my-style form-control" id="new-task" placeholder="Type something thing to do...">
+                        <div class="form-check">
+                            <input onclick="bgGray()" class="form-check-input" type="radio" name="bg-radios" id="radio1" value="option1">
+                                <label class="form-check-label radio-btn" for="radio1">Gray</label>
                         </div>
                     </div>
-                </div>  
-            </div>
-            
-        </div>
-
-
-        <!--------------------BUTTONS-------------------->
-        
-        <div class="container my-style btn-container">
-            
-            <div class="row">
-                <br>
-                <div class="col-sm addBtn">
-                    <button id="addTask" class="btn btn-outline-light from-control">Add</button>
-                </div>
-
-                <div class="col-sm">
-
                     <div class="col-sm">
                         <div class="form-check">
-                            <input onclick="bgBluePink()" class="form-check-input" type="radio" name="bg-radios" id="radio1" value="option1">
-                            <label class="form-check-label" for="radio1">
-                                Pink and Blue Marble
-                            </label>
+                            <input onclick="bgLight()" class="form-check-input" type="radio" name="bg-radios" id="radio2" value="option1">
+                            <label class="form-check-label radio-btn" for="radio1">Light</label>
                         </div>
                     </div>
- 
-
                     <div class="col-sm">
                         <div class="form-check">
-                            <input onclick="bgRainbow()" class="form-check-input" type="radio" name="bg-radios" id="radio2" value="option2">
-                            <label class="form-check-label" for="radio2">
+                            <input onclick="bgMarble()" class="form-check-input" type="radio" name="bg-radios" id="radio3" value="option1">
+                            <label class="form-check-label radio-btn" for="radio1">Marble</label>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgRainbow()" class="form-check-input " type="radio" name="bg-radios" id="radio4" value="option2">
+                            <label class="form-check-label radio-btn" for="radio2">
                                 Rainbow
                             </label>
                         </div>
                     </div>
-
-
                     <div class="col-sm">
                         <div class="form-check">
-                        <input onclick="bgSmoke()" class="form-check-input" type="radio" name="bg-radios" id="radio3" value="option3">
-                        <label class="form-check-label" for="radio3">
-                            Smoke
-                        </label>
+                            <input onclick="bgSmoke()" class="form-check-input " type="radio" name="bg-radios" id="radio5" value="option3">
+                            <label class="form-check-label radio-btn" for="radio3">
+                                Smoke
+                            </label>
+                        </div>
                     </div>
-                    
-                </div>
-
+                </div>    
+            </div>  
+            <br>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col ">
+                        <div class="form">
+                            <input type="text" class="form-control" id="new-start-date" placeholder="Start Date" onfocus="(this.type='date')">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col">
+                        <div class="form">
+                            <input type="text" class="form-control" id="new-end-date" placeholder="End Date" onfocus="(this.type='date')">
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+            <br>  
+            <div class="card my-style">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class=" my-style form-control" id="new-task" placeholder="Some much to do... add more here">
+                        </div>
+                    </div>
+                </div>  
             </div>
-            
-        
+            <br>               
+                <!--------------------BUTTONS-------------------->
+                
+            <div class="my-style">
+                <div class="row">
+                    <div class="col addBtn">
+                        <button id="addTask" class="btn my-btn btn-outline-light from-control" onclick="task()">➕</button>
+                    </div>
+                </div>
+            </div>     
+        </div>        
+      
             <!------------------------TABLE--------------------------->
         <br>
-        <br>
-        <div class="container table-size">
+        <div class="container grid table-size">
             <div class="table-card">
-                <table id="list" class="my-style table table-light table-striped">
+                <table id="list" class="my-style table table-secondary table-striped table-hover">
                     <tr>
                         <th scope="col">Task</th>
                         <th scope="col">Date Created</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">Due Date</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col"></th>
                     </tr>
                 </table>
             </div>
