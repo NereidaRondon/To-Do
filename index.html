@@ -7,7 +7,7 @@
     <meta name="author" content="Nereida Rondon">
     <meta name="description" content="To do application built with javascript and bootstrap.">
 
-    <title>To Do</title>
+    <title>Click List</title>
 
     <link rel="stylesheet" href="styles.css">
     <!-- <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">  -->
@@ -18,9 +18,9 @@
 </head>
 <body id="bg">
 
+    <button id="gear" class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">⚙️</button>
 
-
-    <button id="gear" class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">⚙️</button>
+    <!-------------------PLACEMAT-------------------->
 
     <div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
 
@@ -35,26 +35,26 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="form-check">
-                            <input onclick="bgGray()" class="form-check-input" type="radio" name="bg-radios" id="radio1" value="option1">
+                            <input onclick="bgNone()" class="form-check-input" type="radio" name="bg-radios" id="radio1" value="option1">
                                 <label class="form-check-label radio-btn" for="radio1">None</label>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-check">
                             <input onclick="bgLight()" class="form-check-input" type="radio" name="bg-radios" id="radio2" value="option1">
-                            <label class="form-check-label radio-btn" for="radio1">Light</label>
+                            <label class="form-check-label radio-btn" for="radio2">Light</label>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-check">
                             <input onclick="bgMarble()" class="form-check-input" type="radio" name="bg-radios" id="radio3" value="option1">
-                            <label class="form-check-label radio-btn" for="radio1">Marble</label>
+                            <label class="form-check-label radio-btn" for="radio3">Marble</label>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-check">
                             <input onclick="bgRainbow()" class="form-check-input " type="radio" name="bg-radios" id="radio4" value="option2">
-                            <label class="form-check-label radio-btn" for="radio2">
+                            <label class="form-check-label radio-btn" for="radio4">
                                 Rainbow
                             </label>
                         </div>
@@ -62,7 +62,7 @@
                     <div class="col-sm">
                         <div class="form-check">
                             <input onclick="bgSmoke()" class="form-check-input " type="radio" name="bg-radios" id="radio5" value="option3">
-                            <label class="form-check-label radio-btn" for="radio3">
+                            <label class="form-check-label radio-btn" for="radio5">
                                 Smoke
                             </label>
                         </div>
@@ -74,26 +74,25 @@
     </div>
 
 
+<!----------------------------------------------------->
 
-
-
-    <h1 class="text-center title">Things to do...</h1>
+    <h1 class="text-center title">Click List</h1>
     <br>
         <div class="container my-style">   
-        
-            
             <br>
+            <!---------------DATES--------------->
+
             <div class="card-body">
                 <div class="row">
                     <div class="col ">
                         <div class="form">
-                            <input type="text" class="form-control" id="new-start-date" placeholder="Start Date" onfocus="(this.type='date')">
+                            <input type="text" class="form-control" id="new-start-date" placeholder="Start Date" onfocus="(this.type='date')" onblur="">
                         </div>
                     </div>
                     <br>
                     <div class="col">
                         <div class="form">
-                            <input type="text" class="form-control" id="new-end-date" placeholder="End Date" onfocus="(this.type='date')">
+                            <input type="text" class="form-control" id="new-end-date" placeholder="Due Date" onfocus="(this.type='date')">
                         </div>
                     </div>
                 </div>    
@@ -103,7 +102,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <input type="text" class=" my-style form-control" id="new-task" placeholder="Some much to do... add more here">
+                            <input type="text" class=" my-style form-control" id="new-task" placeholder="Add something to your list">
                         </div>
                     </div>
                 </div>  
@@ -126,11 +125,11 @@
             <div class="table-card">
                 <table id="list" class="my-style table table-secondary table-striped table-hover">
                     <tr>
-                        <th scope="col">Task</th>
-                        <th scope="col">Date Created</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">Due Date</th>
-                        <th scope="col"></th>
+                        <th scope="col">Created&emsp;</th>
+                        <th scope="col">Start Date &emsp;</th>
+                        <th scope="col">Due Date &emsp;</th>
+                        <th scope="col">✏️&emsp;&emsp;</th>
+                        <th scope="col">&emsp;&emsp;</th>
                     </tr>
                 </table>
             </div>
@@ -144,6 +143,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     <!-- <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script> -->
+    
     <script src="script.js"></script>
 </body>
 </html>
