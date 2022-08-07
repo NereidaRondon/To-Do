@@ -8,14 +8,15 @@ let bgLight=()=>{
 
 let bgMarble=()=>{ 
     document.getElementById('bg').style.backgroundImage ="url(images/pinkbluemarble.png)";
+    document.getElementById('bg')
 };
 
 let bgRainbow=()=>{ 
-    document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
+    document.getElementById('bg').style.backgroundImage ="url('images/rainbow.webp')";
 };
 
 let bgSmoke=()=>{ 
-    document.getElementById('bg').style.backgroundImage ="url('https://images.unsplash.com/photo-1598760122223-45f0f18a1bbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')";
+    document.getElementById('bg').style.backgroundImage ="url('images/smoke.webp')";
 };
 
 var userInput = document.getElementById("new-task");
@@ -34,15 +35,13 @@ let task=()=>{
     let table = document.getElementById('list');
     let row = table.insertRow(-1);
 
-    row.setAttribute('id', `item-${id}`);
-    row.setAttribute('onmouseover', `mouseOver()`);
-    
+    row.setAttribute('id', `item-${id}`); 
     
     row.insertCell(0).innerHTML=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     
-    row.insertCell(1).innerHTML=document.getElementById('new-start-date').value;
+    row.insertCell(1).innerHTML=document.getElementById('start-date').value;
     
-    row.insertCell(2).innerHTML=document.getElementById('new-end-date').value;
+    row.insertCell(2).innerHTML=document.getElementById('end-date').value;
     
     row.insertCell(3).innerHTML = document.getElementById('new-task').value;
 
@@ -53,8 +52,8 @@ let task=()=>{
     console.log(`Added a row with id: item-${id}`);
 
     document.getElementById('new-task').value='';
-    document.getElementById('new-start-date').value='';
-    document.getElementById('new-end-date').value='';
+    document.getElementById('start-date').value='';
+    document.getElementById('end-date').value='';
     console.log(`Fields are cleared`);   
     
 }
@@ -63,7 +62,7 @@ function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
     btn.id=id;
-    btn.innerHTML = '🗑️';
+    btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i>';
    
     btn.onclick = ()=>{
         console.log(`Deleting row with id: item-${id+1}`);

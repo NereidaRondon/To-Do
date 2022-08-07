@@ -1,54 +1,79 @@
+
+.myFont{
+    font-family: 'Quicksand', sans-serif;
+}
 body{
-    /* font-family:Garamond, serif; */
-    background-repeat: no-repeat; 
+    font-family: 'Quicksand', sans-serif;
     background-color: #cbcddf;
     background-size: cover;
-    font-weight: bold;
+    
 }
 
 #bg{
-    background-color: rgb(205, 222, 250);
+    background: linear-gradient(360deg, #7eaaf7, #97bdff, #b9d3ff,#dce9ff, #dce9ff, #ffffff, #ffffff);
+    width:100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-attachment:fixed;
 }
 /* -------------PLACEMAT--------------- */
-#gear{
-    /* justify-content: end;
-    align-content: flex-end;
-    align-self: flex-end; */
-    margin-left:91%;
+#icon1,
+#icon2,
+#icon3,
+#icon4 {
+    color:rgb(4, 27, 156);
 }
 
 
 /* ------------------------------------- */
-/* .my-style{
-    font-family:Garamond, serif;
-
-} */
-.title {
-  /* font-family:Garamond, serif; */
+h1{
+  font-family: 'Quicksand', sans-serif;
   font-size: 35px;
-  font-weight:bold;
-  line-height: 45px;
   margin-top: 1rem;
-  background: -webkit-linear-gradient( rgb(16, 124, 248),rgb(3, 18, 139));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgb(6, 65, 175);
-  filter: drop-shadow(2px 2px 1px rgb(0, 15, 34));
+  color:rgb(4, 27, 156);
+  filter: drop-shadow(2px 3px 2px rgb(199, 200, 201));
 }
 
 
 /* ------------FORM--------------- */
 input{
     filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
-    
+    width: 300px;
+    display:flex;
+    margin: 5px auto;
+    height:35px;
+    background-color: rgb(213, 230, 253);
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+        
+}
+::placeholder{
+    font-family: 'Quicksand', sans-serif;
 }
 
+.myGrid{
+    grid-gap:1rem;
+
+}
 .my-btn{
-    width: 50px;
-    margin-bottom: 1rem;
+    width: 40px;
+    height: 40px;
+    margin: auto;
     font-weight: bolder;
-    font-size: 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 1px solid rgb(40, 40, 41);
+    
+}
+.gear-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
     
 }
 #addTask{
@@ -62,7 +87,12 @@ input{
 }
 
 .glass{
-    /* background-color: rgba(255, 255, 255, .2);   */
+    max-width: fit-content;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    padding: 2rem;
+    margin:1rem auto;
+    box-shadow: 5px 4px 7px rgb(40, 40, 40);
     background: linear-gradient(140deg,
     rgba(102, 168, 255, 0.15), 
     rgba(255, 255, 255,.3),
@@ -72,11 +102,6 @@ input{
     rgba(255, 255, 255,.2),
     rgba(255, 255, 255,.2)
     );
-    
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    padding:.5rem;
-    margin:0 .75rem;
 }
 
 /* ------------TABLE-------------- */
