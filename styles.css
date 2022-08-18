@@ -1,7 +1,53 @@
+.list-container{
+    background-color:white;
+    margin:2rem;
+    display: grid;
+    grid-template-columns: .5fr .5fr .5fr 2fr auto auto;
+    grid-template-rows: 30px;
+    border: 1px solid rgb(47, 0, 255);
 
+}
+.box{
+    border: 1px solid rgb(255, 0, 179);  
+    align-self: center;
+    text-align: center;
+}
+
+/* .created{
+    grid-column: 1/2;
+    grid-row:1;
+}
+.start{
+    grid-column: 2/3;
+    grid-row:1;
+}
+.due{
+    grid-column: 3/4;
+    grid-row:1;
+}
+.task{
+    grid-column: 4/5;
+    grid-row:1;
+}
+.edit{
+    grid-column: 5/6;
+    grid-row:1;
+}
+.delete{
+    grid-column: 6/7;
+    grid-row:1;
+} */
+/* ------------------------ */
 .myFont{
     font-family: 'Quicksand', sans-serif;
 }
+
+.offcanvas-title{
+    display: flex;
+    margin: auto;
+}
+
+
 body{
     font-family: 'Quicksand', sans-serif;
     background-color: #cbcddf;
@@ -58,9 +104,10 @@ input{
 
 }
 .my-btn{
+    float: right;
     width: 40px;
     height: 40px;
-    margin: auto;
+    margin:0 .5rem;
     font-weight: bolder;
     font-size: 20px;
     border-radius: 50px;
