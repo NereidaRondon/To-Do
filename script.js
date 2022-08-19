@@ -36,8 +36,8 @@ let task=()=>{
     let listDiv = $('.list');
 
     let created = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-    let dueDate = document.getElementsByClassName('end-date').innerHTML;
-    let newTask=  document.getElementsByClassName('new-task').innerHTML;
+    let dueDate = document.getElementById('end-date').value;
+    let newTask=  document.getElementById('new-task').value;
     console.log(dueDate);
     listDiv.append(
                 `<div id="task-${id}" class="task-container">
@@ -45,12 +45,12 @@ let task=()=>{
                     <div class="due box">${dueDate}</div>
                     <div class="task box">${newTask}</div>
                     <div class="edit box">📝</div>
-                    <div class="delete box">🗑️</div>                        
+                    <div id="deleteBtn-${id}"class="delete box"></div>                        
                 </div>`
     );
 
-    let deleteAction = $('delete');
-    $('delete').html(deleteButton(id++));
+    let deleteAction = document.getElementById(`deleteBtn-${id}`);
+    deleteAction.appendChild(deleteButton(id++));
 
     console.log(`Added a task with id: task-${id}`);
 
@@ -60,6 +60,21 @@ let task=()=>{
     
 };
  
+
+function deleteButton(id){
+    let btn=document.createElement('button');
+    btn.className='btn btn-outline-dark';
+    btn.id=id;
+    btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i>';
+   
+    btn.onclick = ()=>{
+        console.log(`Deleting row with id: task-${id+1}`);
+        let taskToDelete = document.getElementById(`task-${id}`);
+        taskToDelete.parentNode.removeChild(taskToDelete);
+    };
+    return btn;   
+};
+
 
 function deleteButton(id){
     let btn=document.createElement('button');
