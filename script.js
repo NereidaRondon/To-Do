@@ -33,31 +33,32 @@ let id = 0;
 //task is appended when add button is clicked
 let task=()=>{
     let date = new Date();
-    let table = document.getElementById('list');
-    let row = table.insertRow(-1);
+    let listDiv = $('.list');
 
-    row.setAttribute('id', `item-${id}`); 
-    
-    row.insertCell(0).innerHTML=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-    
-    
-    
-    row.insertCell(1).innerHTML=document.getElementById('end-date').value;
-    
-    row.insertCell(2).innerHTML = document.getElementById('new-task').value;
+    let created = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+    let dueDate = document.getElementsByClassName('end-date').innerHTML;
+    let newTask=  document.getElementsByClassName('new-task').innerHTML;
+    console.log(dueDate);
+    listDiv.append(
+                `<div id="task-${id}" class="task-container">
+                    <div class="created box">${created}</div>
+                    <div class="due box">${dueDate}</div>
+                    <div class="task box">${newTask}</div>
+                    <div class="edit box">📝</div>
+                    <div class="delete box">🗑️</div>                        
+                </div>`
+    );
 
+    let deleteAction = $('delete');
+    $('delete').html(deleteButton(id++));
 
-    let deleteAction = row.insertCell(3);
-    deleteAction.appendChild(deleteButton(id++));
-
-    console.log(`Added a row with id: item-${id}`);
+    console.log(`Added a task with id: task-${id}`);
 
     document.getElementById('new-task').value='';
-    document.getElementById('start-date').value='';
     document.getElementById('end-date').value='';
     console.log(`Fields are cleared`);   
     
-}
+};
  
 
 function deleteButton(id){
@@ -67,8 +68,8 @@ function deleteButton(id){
     btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i>';
    
     btn.onclick = ()=>{
-        console.log(`Deleting row with id: item-${id+1}`);
-        let taskToDelete = document.getElementById(`item-${id}`);
+        console.log(`Deleting row with id: task-${id+1}`);
+        let taskToDelete = document.getElementById(`task-${id}`);
         taskToDelete.parentNode.removeChild(taskToDelete);
     };
     return btn;   
