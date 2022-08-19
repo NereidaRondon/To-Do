@@ -1,11 +1,38 @@
 .list-container{
-    background-color:white;
-    margin:2rem;
+    margin:2rem 2rem .5rem 2rem; 
     display: grid;
-    grid-template-columns: .5fr .5fr .5fr 2fr auto auto;
-    grid-template-rows: 30px;
-    border: 1px solid rgb(47, 0, 255);
-
+    grid-template-columns: 2fr 2fr 5fr 1fr 1fr;
+    grid-template-rows: 2rem;
+}
+.list-glass{
+    background-color:none;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    align-self: center;
+    text-align: center;
+    box-shadow: 5px 4px 7px rgb(40, 40, 40);
+    background: linear-gradient(140deg,
+    rgba(102, 168, 255, 0.15), 
+    rgba(255, 255, 255,.1) ,
+    rgba(255, 255, 255,.3),
+    rgba(102, 168, 255, 0.2),
+    rgba(255, 255, 255,.2), 
+    rgba(255, 255, 255,.2),
+    rgba(102, 168, 255, 0.2),
+    rgba(255, 255, 255,.2)
+    );
+}
+.task-container{
+    background-color:white;
+    margin:.5rem 2rem;
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: 2fr 2fr 5fr 1fr 1fr;
+    grid-template-rows: 3rem;
+    border: 1px solid rgb(0, 255, 0);
+    font-family: 'Quicksand', sans-serif;
 }
 .box{
     border: 1px solid rgb(255, 0, 179);  
@@ -13,30 +40,6 @@
     text-align: center;
 }
 
-/* .created{
-    grid-column: 1/2;
-    grid-row:1;
-}
-.start{
-    grid-column: 2/3;
-    grid-row:1;
-}
-.due{
-    grid-column: 3/4;
-    grid-row:1;
-}
-.task{
-    grid-column: 4/5;
-    grid-row:1;
-}
-.edit{
-    grid-column: 5/6;
-    grid-row:1;
-}
-.delete{
-    grid-column: 6/7;
-    grid-row:1;
-} */
 /* ------------------------ */
 .myFont{
     font-family: 'Quicksand', sans-serif;
@@ -46,15 +49,11 @@
     display: flex;
     margin: auto;
 }
-
-
 body{
     font-family: 'Quicksand', sans-serif;
     background-color: #cbcddf;
-    background-size: cover;
-    
+    background-size: cover;  
 }
-
 #bg{
     background: linear-gradient(360deg, #7eaaf7, #97bdff, #b9d3ff,#dce9ff, #dce9ff, #ffffff, #ffffff);
     width:100vw;
@@ -71,8 +70,6 @@ body{
 #icon4 {
     color:rgb(4, 27, 156);
 }
-
-
 /* ------------------------------------- */
 h1{
   font-family: 'Quicksand', sans-serif;
@@ -81,8 +78,6 @@ h1{
   color:rgb(4, 27, 156);
   filter: drop-shadow(2px 3px 2px rgb(199, 200, 201));
 }
-
-
 /* ------------FORM--------------- */
 input{
     filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
@@ -129,8 +124,7 @@ input{
 
 .form-check-label{
     font-size: 18px;
-    filter: drop-shadow(2px 2px 1px rgb(14, 92, 209)); 
-     
+    filter: drop-shadow(2px 2px 1px rgb(14, 92, 209));   
 }
 
 .glass{
@@ -142,11 +136,11 @@ input{
     box-shadow: 5px 4px 7px rgb(40, 40, 40);
     background: linear-gradient(140deg,
     rgba(102, 168, 255, 0.15), 
-    rgba(255, 255, 255,.3),
-    rgba(255, 255, 255,.1) ,
+    rgba(255, 255, 255,.25),
+    rgba(255, 255, 255,.05),
     rgba(255, 255, 255,.2), 
     rgba(102, 168, 255, 0.2),
-    rgba(255, 255, 255,.2),
+    rgba(255, 255, 255,.1),
     rgba(255, 255, 255,.2)
     );
 }
@@ -159,9 +153,15 @@ input{
         width: 200px;
         height:auto;         
     }
-
+    
 }
 
+@media only screen and (max-width: 600px){
+ 
+    .list-container{
+        height: 3rem;
+    }    
+}
 /* ------------TABLE-------------- */
 
 #list{

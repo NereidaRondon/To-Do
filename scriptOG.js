@@ -40,14 +40,14 @@ let task=()=>{
     
     row.insertCell(0).innerHTML=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     
+    row.insertCell(1).innerHTML=document.getElementById('start-date').value;
     
+    row.insertCell(2).innerHTML=document.getElementById('end-date').value;
     
-    row.insertCell(1).innerHTML=document.getElementById('end-date').value;
-    
-    row.insertCell(2).innerHTML = document.getElementById('new-task').value;
+    row.insertCell(3).innerHTML = document.getElementById('new-task').value;
 
 
-    let deleteAction = row.insertCell(3);
+    let deleteAction = row.insertCell(4);
     deleteAction.appendChild(deleteButton(id++));
 
     console.log(`Added a row with id: item-${id}`);

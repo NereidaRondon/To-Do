@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"> 
     
@@ -92,9 +92,9 @@
                 <div class="grid col-l text-center --bs-gap: 1rem;">
                     <h1 >Click List <i id="icon4" class="fa-solid fa-arrow-pointer"></i></h1>
                 </div>
-                <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
+                <!-- <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
                     <input type="text" class="myInput" id="start-date" placeholder="Start Date" onfocus="(this.type='date')">
-                </div>
+                </div> -->
                 <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
                     <input type="text" class="myInput" id="end-date" placeholder="Due Date" onfocus="(this.type='date')">
                 </div>
@@ -121,7 +121,7 @@
                 <table id="list" class= "table table-secondary table-striped table-hover">
                     <tr>
                         <th scope="col">Created&emsp;</th>
-                        <th scope="col">Start Date &emsp;</th>
+                        <!-- <th scope="col">Start Date &emsp;</th> -->
                         <th scope="col">Due Date &emsp;</th>
                         <th scope="col">✏️&emsp;&emsp;</th>
                         <th scope="col">&emsp;&emsp;</th>
@@ -130,16 +130,30 @@
             </div>
         </div>
 <br>
-        <div class="list-container">
-                <div class="created box">Created</div>
-                <div class="start box">Start Date</div>
-                <div class="due box">Due Date</div>
-                <div class="task box">Task</div>
-                <div class="edit box"></div>
-                <div class="delete box"></div>
-                                
+        <!-------------------------------------------------->
+        <div class="">
+            <div class="list-container list-glass">
+                    <div class="created">Created</div>
+                    <div class="due">Due Date</div>
+                    <div class="task">Task</div>
+                    <div class="edit"></div>
+                    <div class="delete"></div>                        
+            </div>
+            <div class="task-container">
+                    <div class="created box">Created</div>
+                    <div class="due box">Due Date</div>
+                    <div class="task box">Task</div>
+                    <div class="edit box">📝</div>
+                    <div class="delete box">🗑️</div>                        
+            </div>
+                <div class="task-container">
+                    <div class="created box">Created</div>
+                    <div class="due box">Due Date</div>
+                    <div class="task box">Task</div>
+                    <div class="edit box">📝</div>
+                    <div class="delete box">🗑️</div>                        
+            </div>
         </div>
-
     
         <!-------------------------------------------------->
 
