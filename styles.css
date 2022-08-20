@@ -76,7 +76,7 @@ h1{
   font-size: 35px;
   margin-top: 1rem;
   color:rgb(4, 27, 156);
-  filter: drop-shadow(2px 3px 2px rgb(199, 200, 201));
+  filter: drop-shadow(2px 2px 1.5px rgb(20, 20, 20));
 }
 /* ------------FORM--------------- */
 input{
