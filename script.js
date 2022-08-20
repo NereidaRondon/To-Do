@@ -76,7 +76,7 @@ function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
     btn.id= `del-${id}`;
-    btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i>';
+    btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i><i class="fa-regular fa-trash-can"></i>';
     
     btn.onclick = ()=>{
         console.log(`Deleting row with id: task-${id}`);
@@ -96,15 +96,28 @@ function editButton(id){
     edit.onclick = ()=>{
         console.log(`Updating task with id: task-${id}`);
 
-        let editTaskText = document.getElementById(`editTask-${id}`).innerHTML;
+        //let editTaskText = document.getElementById(`editTask-${id}`).innerHTML;
+        let editTaskText = $(`#editTask-${id}`).text();
         //taskToDelete.parentNode.removeChild(taskToDelete);
         console.log(editTaskText);
+        $(`#editTask-${id}`).text('');
 
-        let taskDiv = $(`#editBtn-${id}`);
-        taskDiv.append(`<input type="text" class="myInput">${editTaskText}</input>`);
+        let taskDiv = $(`#editTask-${id}`);
+        taskDiv.append(`<input type="text" id="taskInput-${id}" class="myInput" value="${editTaskText}"></input><button class="btn btn-outline-dark"><i id="icon6" class="fa-solid fa-square-check"></i></button>`);
         
+        //Get editted text from input box and insert it into div
+        let newText = $(`#taskInput-${id}`).value;
+        $(`#editTask-${id}`).text(newText);
 
-
+        //add onclick that will take input data and insert it into div 
+        //then delete the input box and button
+        
+        addEventListener
+        btn.onclick = ()=>{
+        console.log(`Deleting row with id: task-${id}`);
+        let taskToDelete = document.getElementById(`task-${id}`);
+        taskToDelete.parentNode.removeChild(taskToDelete);
+    };
 
     };
     return edit;   
