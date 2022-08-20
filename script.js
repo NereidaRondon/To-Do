@@ -21,7 +21,7 @@ let bgAurora=()=>{
 let bgShore=()=>{ 
     document.getElementById('bg').style.backgroundImage ="url('images/shore.webp')";
 };
-
+///////////////////////////////////////////////////////////////////////////////
 var userInput = document.getElementById("new-task");
 
 userInput.addEventListener("keypress", function(event) {
@@ -33,7 +33,7 @@ userInput.addEventListener("keypress", function(event) {
 
 
 let id = 0;
-//task is appended when add button is clicked
+//task is appended when add button is clicked or enter is keyed
 let task=()=>{
     let date = new Date();
     let listDiv = $('.list');
@@ -41,35 +41,43 @@ let task=()=>{
     let created = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     let dueDate = document.getElementById('end-date').value;
     let newTask=  document.getElementById('new-task').value;
-    console.log(dueDate);
+    
     listDiv.append(
                 `<div id="task-${id}" class="task-container">
                     <div class="created box">${created}</div>
                     <div class="due box">${dueDate}</div>
-                    <div class="task box">${newTask}</div>
-                    <div class="edit box">📝</div>
-                    <div id="deleteBtn-${id}"class="delete box"></div>                        
+                    <div id="editTask-${id}" class="task box">${newTask}</div>
+                    <div id="editBtn-${id}" class="edit box"></div>
+                    <div id="deleteBtn-${id}" class="delete box"></div>                        
                 </div>`
     );
     console.log(`Added a task with id: task-${id}`);
 
+    //call on create Edit and Delete button functions
+
+    console.log(id);
+
     let deleteAction = document.getElementById(`deleteBtn-${id}`);
-    deleteAction.appendChild(deleteButton(id++));
+    deleteAction.appendChild(deleteButton(id));
+  
+    let editAction = document.getElementById(`editBtn-${id}`);
+    editAction.appendChild(editButton(id));
 
-
+    //Clear input fields
     document.getElementById('new-task').value='';
     document.getElementById('end-date').value='';
     console.log(`Fields are cleared`);   
-    
+        
+    id++;
 };
  
 
 function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
-    btn.id=id;
+    btn.id= `del-${id}`;
     btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i>';
-   
+    
     btn.onclick = ()=>{
         console.log(`Deleting row with id: task-${id}`);
         let taskToDelete = document.getElementById(`task-${id}`);
@@ -80,15 +88,24 @@ function deleteButton(id){
 
 
 function editButton(id){
-    let btn=document.createElement('button');
-    btn.className='btn btn-outline-dark';
-    btn.id=id;
-    btn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+    let edit=document.createElement('button');
+    edit.className='btn btn-outline-dark';
+    edit.id= id;
+    edit.innerHTML = '<i id="icon5" class="fa-regular fa-pen-to-square"></i>';
    
-    btn.onclick = ()=>{
-        console.log(`Updating task with id: task-${id+1}`);
-        let taskToDelete = document.getElementById(`task-${id}`);
-        taskToDelete.parentNode.removeChild(taskToDelete);
+    edit.onclick = ()=>{
+        console.log(`Updating task with id: task-${id}`);
+
+        let editTaskText = document.getElementById(`editTask-${id}`).innerHTML;
+        //taskToDelete.parentNode.removeChild(taskToDelete);
+        console.log(editTaskText);
+
+        let taskDiv = $(`#editBtn-${id}`);
+        taskDiv.append(`<input type="text" class="myInput">${editTaskText}</input>`);
+        
+
+
+
     };
-    return btn;   
+    return edit;   
 };
