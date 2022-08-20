@@ -2,7 +2,7 @@
     margin:2rem 2rem .5rem 2rem; 
     display: grid;
     grid-template-columns: 2fr 2fr 5fr .5fr 1fr 1fr;
-    grid-template-rows: 2rem;
+    grid-template-rows: 3rem;
 }
 .list-glass{
     background-color:none;
@@ -28,15 +28,15 @@
     z-index: 10;
     background-color:white;
     margin:.5rem 2rem;
+    padding: .5rem;
     display: grid;
     border-radius: 5px;
     grid-template-columns: 2fr 2fr 5fr .5fr 1fr 1fr;
-    grid-template-rows: 4rem;
     border: 1px solid rgb(0, 255, 0);
     font-family: 'Quicksand', sans-serif;
 }
 .box{
-    border: 1px solid rgb(255, 0, 179);  
+    /* border: 1px solid rgb(255, 0, 179);   */
     align-self: center;
     text-align: center;
 }
@@ -165,13 +165,17 @@ input{
     .list-container{
         margin:.5rem 1rem; 
         display: grid;
-        grid-template:  2rem 2rem/1fr 1fr 1fr 1fr 1fr 1fr 5fr;       
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 5fr;       
     }
         
     .task-container{
         margin:1rem 1rem;
         display: grid;
-        grid-template:  2rem 2rem 2rem 2rem 1rem /1fr 1fr 1fr 1fr 1fr 1fr 5fr;
+        grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 5fr;
+    }
+    .box{
+        align-self: start;
+        text-align: start;
     }
     .created{
         grid-column: 1/4;

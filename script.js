@@ -46,10 +46,10 @@ let task=()=>{
                 `<div id="task-${id}" class="task-container">
                     <div class="created box">${created}</div>
                     <div class="due box">${dueDate}</div>
-                    <div id="editTask-${id}" class="task box">${newTask}</div>
+                    <div id="taskText-${id}" class="task box">${newTask}</div>
                     <div id="doneEdit-${id}"class="done box"></div>
-                    <div id="editBtn-${id}" class="edit box"></div>
-                    <div id="deleteBtn-${id}" class="delete box"></div>                        
+                    <div id="edit-${id}" class="edit box"></div>
+                    <div id="delete-${id}" class="delete box"></div>                        
                 </div>`
     );
     console.log(`Added a task with id: task-${id}`);
@@ -58,10 +58,10 @@ let task=()=>{
 
     console.log(id);
 
-    let deleteAction = document.getElementById(`deleteBtn-${id}`);
+    let deleteAction = document.getElementById(`delete-${id}`);
     deleteAction.appendChild(deleteButton(id));
   
-    let editAction = document.getElementById(`editBtn-${id}`);
+    let editAction = document.getElementById(`edit-${id}`);
     editAction.appendChild(editButton(id));
 
     //Clear input fields
@@ -76,7 +76,7 @@ let task=()=>{
 function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
-    btn.id= `del-${id}`;
+    btn.id= `delBtn-${id}`;
     btn.innerHTML = '<i id="icon3"class="fa-solid fa-trash-can"></i>';
     
     btn.onclick = ()=>{
@@ -91,19 +91,19 @@ function deleteButton(id){
 function editButton(id){
     let edit=document.createElement('button');
     edit.className='btn btn-outline-dark';
-    edit.id= id;
+    edit.id= `editBtn-${id}`;
     edit.innerHTML = '<i id="icon5" class="fa-regular fa-pen-to-square"></i>';
    
     edit.onclick = ()=>{
         console.log(`Updating task with id: task-${id}`);
+        $(`#editBtn-${id}`).attr("disabled", "disabled");
 
-        //let textToBeEditted = document.getElementById(`editTask-${id}`).innerHTML;
-        let textToBeEditted = $(`#editTask-${id}`).text();
+        let textToBeEditted = $(`#taskText-${id}`).text();
         //taskToDelete.parentNode.removeChild(taskToDelete);
         console.log(textToBeEditted);
-        $(`#editTask-${id}`).text('');
+        $(`#taskText-${id}`).text('');
 
-        let taskDiv = $(`#editTask-${id}`);
+        let taskDiv = $(`#taskText-${id}`);
         taskDiv.append(`<input type="text" id="taskInput-${id}" class="myInput" value="${textToBeEditted}"></input>`);
         
         let doneEditAction = document.getElementById(`doneEdit-${id}`);
@@ -121,7 +121,7 @@ function doneButton(id){
     
     done.onclick=()=>{
         console.log(`Done editing task with id: task-${id}`);
-        
+        $(`#editBtn-${id}`).removeAttr("disabled");
         //get new text from input
         let newText = document.getElementById(`taskInput-${id}`).value;
         
@@ -130,7 +130,7 @@ function doneButton(id){
         $(`#taskInput-${id}`).remove;
         
         //new text in div
-            $(`#editTask-${id}`).text(newText);
+            $(`#taskText-${id}`).text(newText);
         //remove done button
         $(`#doneEdit-${id}`).empty();
     };
