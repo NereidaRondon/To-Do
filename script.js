@@ -47,6 +47,7 @@ let task=()=>{
                     <div class="created box">${created}</div>
                     <div class="due box">${dueDate}</div>
                     <div id="editTask-${id}" class="task box">${newTask}</div>
+                    <div id="doneEdit-${id}"class="done box"></div>
                     <div id="editBtn-${id}" class="edit box"></div>
                     <div id="deleteBtn-${id}" class="delete box"></div>                        
                 </div>`
@@ -76,7 +77,7 @@ function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
     btn.id= `del-${id}`;
-    btn.innerHTML = '<i id="icon3" class="fa-solid fa-trash-can"></i><i class="fa-regular fa-trash-can"></i>';
+    btn.innerHTML = '<i id="icon3"class="fa-solid fa-trash-can"></i>';
     
     btn.onclick = ()=>{
         console.log(`Deleting row with id: task-${id}`);
@@ -96,29 +97,44 @@ function editButton(id){
     edit.onclick = ()=>{
         console.log(`Updating task with id: task-${id}`);
 
-        //let editTaskText = document.getElementById(`editTask-${id}`).innerHTML;
-        let editTaskText = $(`#editTask-${id}`).text();
+        //let textToBeEditted = document.getElementById(`editTask-${id}`).innerHTML;
+        let textToBeEditted = $(`#editTask-${id}`).text();
         //taskToDelete.parentNode.removeChild(taskToDelete);
-        console.log(editTaskText);
+        console.log(textToBeEditted);
         $(`#editTask-${id}`).text('');
 
         let taskDiv = $(`#editTask-${id}`);
-        taskDiv.append(`<input type="text" id="taskInput-${id}" class="myInput" value="${editTaskText}"></input><button class="btn btn-outline-dark"><i id="icon6" class="fa-solid fa-square-check"></i></button>`);
+        taskDiv.append(`<input type="text" id="taskInput-${id}" class="myInput" value="${textToBeEditted}"></input>`);
         
-        //Get editted text from input box and insert it into div
-        let newText = $(`#taskInput-${id}`).value;
-        $(`#editTask-${id}`).text(newText);
-
-        //add onclick that will take input data and insert it into div 
-        //then delete the input box and button
-        
-        addEventListener
-        btn.onclick = ()=>{
-        console.log(`Deleting row with id: task-${id}`);
-        let taskToDelete = document.getElementById(`task-${id}`);
-        taskToDelete.parentNode.removeChild(taskToDelete);
-    };
-
+        let doneEditAction = document.getElementById(`doneEdit-${id}`);
+        doneEditAction.appendChild(doneButton(id));
     };
     return edit;   
 };
+
+function doneButton(id){ 
+    let done=document.createElement('button');
+    done.className='btn btn-outline-dark';
+    done.id= `doneBtn-${id}`;
+    done.type= `submit`;
+    done.innerHTML = '<i id="icon6" class="fa-solid fa-square-check"></i>';
+    
+    done.onclick=()=>{
+        console.log(`Done editing task with id: task-${id}`);
+        
+        //get new text from input
+        let newText = document.getElementById(`taskInput-${id}`).value;
+        
+        console.log(newText);
+        //remove input box
+        $(`#taskInput-${id}`).remove;
+        
+        //new text in div
+            $(`#editTask-${id}`).text(newText);
+        //remove done button
+        $(`#doneEdit-${id}`).empty();
+    };
+    
+    return done;
+};      
+        
