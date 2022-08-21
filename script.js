@@ -22,7 +22,7 @@ let bgShore=()=>{
     document.getElementById('bg').style.backgroundImage ="url('images/shore.webp')";
 };
 ///////////////////////////////////////////////////////////////////////////////
-var userInput = document.getElementById("new-task");
+let userInput = document.getElementById("new-task");
 
 userInput.addEventListener("keypress", function(event) {
     if (event.key === 'Enter') {
@@ -31,7 +31,7 @@ userInput.addEventListener("keypress", function(event) {
     }
 });
 
-
+let allTasks = [];
 let id = 0;
 //task is appended when add button is clicked or enter is keyed
 let task=()=>{
@@ -53,9 +53,10 @@ let task=()=>{
                 </div>`
     );
     console.log(`Added a task with id: task-${id}`);
+    allTasks.push(document.getElementById("task-${id}"));
+    console.log(allTasks);
 
     //call on create Edit and Delete button functions
-
     console.log(id);
 
     let deleteDiv = document.getElementById(`delete-${id}`);
@@ -77,7 +78,7 @@ function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
     btn.id= `delBtn-${id}`;
-    btn.innerHTML = '<i id="icon3"class="fa-solid fa-trash-can"></i>';
+    btn.innerHTML = '<i class="fa-solid fa-trash-can icon"></i>';
     
     btn.onclick = ()=>{
         console.log(`Deleting row with id: task-${id}`);
@@ -86,13 +87,14 @@ function deleteButton(id){
     };
     return btn;   
 };
+//`<input type="text" id="taskInput-${id}" class="edit-input" value="${textToBeEditted}"></input>`
 
 
 function editButton(id){
     let edit=document.createElement('button');
     edit.className='btn btn-outline-dark';
     edit.id= `editBtn-${id}`;
-    edit.innerHTML = '<i id="icon5" class="fa-regular fa-pen-to-square"></i>';
+    edit.innerHTML = '<i class="fa-regular fa-pen-to-square icon"></i>';
    
     edit.onclick = ()=>{
         console.log(`Updating task with id: task-${id}`);
@@ -104,7 +106,7 @@ function editButton(id){
         $(`#taskText-${id}`).text('');
 
         let taskDiv = $(`#taskText-${id}`);
-        taskDiv.append(`<input type="text" id="taskInput-${id}" class="edit-input" value="${textToBeEditted}"></input>`);
+        taskDiv.append(`<textarea id="taskInput-${id}" class="edit-input">${textToBeEditted}</textarea>`);
         
         let editDiv = document.getElementById(`edit-${id}`);
         console.log(id);
@@ -114,13 +116,13 @@ function editButton(id){
     return edit;   
 };
 
-//<i id="icon6" class="fa-solid fa-square-check"></i> 
+//<i class="fa-solid fa-square-check icon"></i> 
 
 function saveButton(id){ 
     let save = document.createElement('button');
     save.className='btn btn-outline-dark';
     save.id= `saveBtn-${id}`;
-    save.innerHTML = '<i class="fa-regular fa-floppy-disk"></i>';
+    save.innerHTML = '<i class="fa-regular fa-floppy-disk icon"></i>';
     
     save.onclick=()=>{
         console.log(`Saving edits for task with id: task-${id}`);
