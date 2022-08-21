@@ -84,7 +84,7 @@ h1{
   filter: drop-shadow(2px 2px 1.5px rgb(20, 20, 20));
 }
 /* ------------FORM--------------- */
-input{
+.myInput{
     filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
     width: 400px;
     display:flex;
@@ -98,7 +98,15 @@ input{
 ::placeholder{
     font-family: 'Quicksand', sans-serif;
 }
-
+.edit-input{
+    width: 400px;
+    height: 200px;
+    display:flex;
+    margin: 5px auto;
+    background-color: rgb(182, 184, 192);
+    border: 2px solid rgb(4, 27, 156);
+    font-family: 'Quicksand', sans-serif;
+}
 .myGrid{
     grid-gap:1rem;
 
