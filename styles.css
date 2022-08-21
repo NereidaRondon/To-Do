@@ -1,10 +1,10 @@
-.list-container{
+.title-container{
     margin:2rem 2rem .5rem 2rem; 
     display: grid;
     grid-template-columns: 2fr 2fr 5fr .5fr 1fr 1fr;
     grid-template-rows: 3rem;
 }
-.list-glass{
+.title-glass{
     background-color:none;
     font-weight: 700;
     font-family: 'Quicksand', sans-serif;
@@ -152,7 +152,7 @@ h1{
 }
  
 @media only screen and (max-width: 600px){
-    .list-container{
+    .title-container{
         margin:.5rem 1rem; 
         display: grid;
         grid-template-columns: 1fr 1fr .5fr 4fr;       

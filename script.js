@@ -32,6 +32,7 @@ userInput.addEventListener("keypress", function(event) {
 });
 
 let allTasks = [];
+
 let id = 0;
 //task is appended when add button is clicked or enter is keyed
 let task=()=>{
@@ -42,18 +43,19 @@ let task=()=>{
     let dueDate = document.getElementById('end-date').value;
     let newTask=  document.getElementById('new-task').value;
     
-    listDiv.append(
-                `<div id="task-${id}" class="task-container">
+    let taskInfo =`<div id="task-${id}" class="task-container">
                     <div class="created box">${created}</div>
                     <div class="due box">${dueDate}</div>
                     <div id="taskText-${id}" class="task box">${newTask}</div>
                     <div id="done-${id}"class="done box"></div>
                     <div id="edit-${id}" class="edit box"></div>
                     <div id="delete-${id}" class="delete box"></div>                        
-                </div>`
-    );
+                  </div>`
+
+    listDiv.append(taskInfo);
     console.log(`Added a task with id: task-${id}`);
-    allTasks.push(document.getElementById("task-${id}"));
+    
+    allTasks.push(taskInfo);
     console.log(allTasks);
 
     //call on create Edit and Delete button functions
@@ -73,7 +75,6 @@ let task=()=>{
     id++;
 };
  
-
 function deleteButton(id){
     let btn=document.createElement('button');
     btn.className='btn btn-outline-dark';
@@ -87,8 +88,6 @@ function deleteButton(id){
     };
     return btn;   
 };
-//`<input type="text" id="taskInput-${id}" class="edit-input" value="${textToBeEditted}"></input>`
-
 
 function editButton(id){
     let edit=document.createElement('button');
@@ -111,7 +110,6 @@ function editButton(id){
         let editDiv = document.getElementById(`edit-${id}`);
         console.log(id);
         editDiv.appendChild(saveButton(id));
-        
     };
     return edit;   
 };
