@@ -161,6 +161,7 @@ h1{
     .task-container{
         margin:1rem 1rem;
         display: grid;
+        grid-gap:10px;
         grid-template-columns: 1fr 1fr .5fr 4fr;
     }
     .box{
@@ -170,26 +171,28 @@ h1{
     .created{
         grid-column: 1/3;
         grid-row: 1;
+        min-width:100px;
     }
     .due{
         grid-column: 1/3;
         grid-row: 2;
     }
     .task{
-        grid-column: 4/5;
+        grid-column: 3/5;
         grid-row: 1/7;
     }
     .done{
         grid-column: 1/2;
         grid-row: 4;
+        height:10px;
     }
     .edit{
         grid-column: 1/2;
         grid-row: 5;
     }
     .delete{
-        grid-column: 1/2;
-        grid-row: 6;
+        grid-column: 2/3;
+        grid-row: 5;
     }
     .edit-input{
         filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
@@ -203,14 +206,34 @@ h1{
         width: 250px;
         height:auto;         
     } 
+    .task-header{
+        grid-column: 4/5;
+        grid-row: 2;
+    }
 }
 @media only screen and (max-width: 500px){
     .edit-input{
         width: 160px;
     }
+    .delete{
+        grid-column: 1/2;
+        grid-row: 6;
+    }
+    .task{
+        grid-column: 3/5;
+        grid-row: 1/7;
+    }
+    .task-header{
+        grid-column: 3/5;
+        grid-row: 2;
+    }
 }
 @media only screen and (max-width: 350px){
     .edit-input{
         width: 120px;
+    }
+    .task{
+        grid-column: 2/5;
+        grid-row: 3/7;
     }
 }   
