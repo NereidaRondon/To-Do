@@ -4,17 +4,26 @@
   <img align='right' alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png" width='50' height='50'>
 </picture>
 
+Check out my [Portfolio](http://NereidaRondon.com)
+
+
+![GitHub last commit](https://img.shields.io/github/last-commit/nereidarondon/To-Do?color=blue&style=for-the-badge)
+
+
 # <h1 align='center'>📝To Do List CRUD App</h1>
+
+
+<img src='https://user-images.githubusercontent.com/97356401/196057751-3ad0c0f6-b246-4d8b-aa09-5e2fc87aa02f.png' width='300' height='300' alt='Checklist bitmoji'/>
+
+[Project Website](https://clicklist.netlify.app/)
+
+This To-Do list was my first CRUD application. This project forced me to solve the problem of how to allow users to edit a specific element on the DOM. This project was where I solidified my skills and humble appreciation for media queries. It was a bit challenging to keep the aesthetic I wanted on all screen sizes, so I started with a mobile first frame of mind. I worked with the smallest screen size possible and changed the lay out as necessary as the view port changed.
+
 
 - Create a to-do item ✔
 - Edit/update to-do item ✔
 - Delete to-do item ✔
 - Responsive design ✔
-
-[Project Website](https://clicklist.netlify.app/)
-
-<img src='https://user-images.githubusercontent.com/97356401/196057751-3ad0c0f6-b246-4d8b-aa09-5e2fc87aa02f.png' width='300' height='300' alt='Checklist bitmoji'/>
-
 
 -------------------------------------------------
 
