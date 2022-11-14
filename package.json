@@ -4,7 +4,8 @@
   "description": "To Do app built with javascript and bootstrap",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/NereidaRondon/To-Do#readme",
   "dependencies": {
     "bootstrap": "^5.2.0",
+    "ejs": "^3.1.8",
     "jquery": "^3.6.0"
   }
 }
